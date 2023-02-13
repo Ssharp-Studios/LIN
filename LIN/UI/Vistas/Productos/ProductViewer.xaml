@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LIN.UI.Vistas.Productos.ProductViewer"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Controls="clr-namespace:LIN.UI.Controles"
+    xmlns:Custom="clr-namespace:LIN.CustomControls"
+    Title="ProductViewer">
+
+
+    <!--  Contenido  -->
+    <VerticalStackLayout Margin="0,20,0,0" Padding="10">
+
+
+        <!--  Imagen y metadatos  -->
+        <HorizontalStackLayout>
+
+            <Border
+                Margin="0"
+                Padding="0"
+                Background="WhiteSmoke"
+                HeightRequest="90"
+                HorizontalOptions="Center"
+                StrokeShape="RoundRectangle 8"
+                StrokeThickness="0"
+                WidthRequest="90">
+                <Image
+                    x:Name="icono"
+                    HeightRequest="50"
+                    Source="icono.png"
+                    WidthRequest="50" />
+            </Border>
+
+            <VerticalStackLayout Margin="10,0,0,0" VerticalOptions="Center">
+                <Label
+                    x:Name="lbNombre"
+                    FontFamily="QSB"
+                    FontSize="15"
+                    Text="Product Name">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="lbNameText" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+                <Label
+                    x:Name="lbTipo"
+                    FontFamily="QSR"
+                    FontSize="10"
+                    Text="Product Category">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="lbCategoryText" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+                <Label
+                    x:Name="lbCantidad1"
+                    FontFamily="QSR"
+                    FontSize="10"
+                    Text="Product Cantidad" />
+            </VerticalStackLayout>
+
+
+        </HorizontalStackLayout>
+
+
+        <!--  Botones de opciones  -->
+        <HorizontalStackLayout Margin="0,10,0,0">
+            <Button
+                Margin="0,0,5,0"
+                Clicked="Button_Clicked"
+                FontFamily="QSB"
+                FontSize="10"
+                HeightRequest="35"
+                Text="Guardar" />
+            <Button
+                BackgroundColor="Crimson"
+                Clicked="ButtonDeleteEvent"
+                FontFamily="QSB"
+                FontSize="10"
+                HeightRequest="35"
+                Text="Eliminar" />
+        </HorizontalStackLayout>
+
+
+        <FlexLayout
+            Margin="-5,10,0,0"
+            Padding="0"
+            AlignItems="Start"
+            JustifyContent="Start"
+            Wrap="Wrap">
+
+            <!--  Panel Cantidad  -->
+
+
+            <Border
+                Margin="1.5"
+                Padding="0"
+                Background="#273746"
+                HeightRequest="90"
+                HorizontalOptions="Center"
+                StrokeShape="RoundRectangle 8"
+                StrokeThickness="0"
+                WidthRequest="160">
+
+                <HorizontalStackLayout Padding="10" HorizontalOptions="Center">
+                    <Image
+                        HorizontalOptions="Start"
+                        Source="cantidad.png"
+                        WidthRequest="30" />
+
+                    <VerticalStackLayout
+                        Margin="10,0,0,0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+
+                        <Label
+                            Margin="0,0,0,5"
+                            FontFamily="QSB"
+                            HorizontalOptions="Center"
+                            Text="Cantidad"
+                            TextColor="#EAECEE" />
+
+                        <Custom:Counter
+                            x:Name="counterCantidad"
+                            BackgroundColor="#2C3E50"
+                            HorizontalOptions="Center"
+                            MinValue="0"
+                            OnValueChange="Counter_OnValueChange"
+                            TextColor="#AEB6BF"
+                            VerticalOptions="Center" />
+
+
+                    </VerticalStackLayout>
+
+
+
+
+
+                </HorizontalStackLayout>
+
+            </Border>
+
+
+
+            <!--  Panel Proveedor  -->
+            <Custom:Card
+                x:Name="cardProveedor"
+                Margin="1.5"
+                ColorBG="#5833FF"
+                ColorSupport="#7252FF"
+                ColorText="#DED7FF"
+                ContentText=""
+                Picture="web.png"
+                Titulo="Proveedor" />
+
+
+            <!--  Panel Precio Compra  -->
+            <Custom:Card
+                x:Name="cardValorCompra"
+                Margin="1.5"
+                ColorBG="#50AF00"
+                ColorSupport="#7BC23E"
+                ColorText="#E2ECD9"
+                ContentText=""
+                Picture="web.png"
+                Titulo="Valor Compra" />
+
+
+            <!--  Panel Precio Venta  -->
+            <Custom:Card
+                x:Name="cardValorVenta"
+                Margin="1.5"
+                ColorBG="#01CED1"
+                ColorSupport="#61DCDE"
+                ColorText="#DFEDED"
+                ContentText=""
+                Picture="web.png"
+                Titulo="Valor Venta" />
+
+
+            <!--  Panel Ventas  -->
+            <Custom:Card
+                x:Name="cardVentas"
+                Margin="1.5"
+                ColorBG="#E74C3C"
+                ColorSupport="#EC7063"
+                ColorText="#FDEDEC"
+                ContentText=""
+                Picture="web.png"
+                Titulo="Ventas" />
+
+
+
+        </FlexLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

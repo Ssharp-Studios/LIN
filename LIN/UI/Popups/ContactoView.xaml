@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="LIN.UI.Popups.ContactoView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Custom="clr-namespace:LIN.CustomControls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Color="Transparent">
+
+    <Grid RowDefinitions="auto" WidthRequest="300">
+
+        <Border
+            Grid.Row="0"
+            BackgroundColor="#F8F8F8"
+            StrokeShape="RoundRectangle 10" />
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            Margin="40"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+
+
+            <!--  Imagen  -->
+            <Grid
+                Margin="0,9,0,9"
+                HorizontalOptions="Center"
+                RowDefinitions="auto"
+                VerticalOptions="Center">
+                <Border
+                    x:Name="bgImg"
+                    Grid.Row="0"
+                    BackgroundColor="YellowGreen"
+                    HeightRequest="50"
+                    StrokeShape="RoundRectangle 25"
+                    WidthRequest="50">
+                    <Image
+                        x:Name="img"
+                        HeightRequest="50"
+                        IsVisible="false"
+                        Source="icono.png"
+                        WidthRequest="50" />
+                </Border>
+
+                <Label
+                    x:Name="lbPic"
+                    Grid.Row="0"
+                    Margin="-1,-1,0,0"
+                    FontFamily="QSB"
+                    FontSize="15"
+                    HorizontalOptions="Center"
+                    Text="C"
+                    VerticalOptions="Center" />
+
+            </Grid>
+
+
+
+            <Label
+                x:Name="lbName"
+                FontFamily="QSB"
+                FontSize="15"
+                HorizontalOptions="Center"
+                Text="Nombre" />
+            <Label
+                x:Name="lbMail"
+                FontFamily="QSM"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Correo@correo" />
+            <Label
+                x:Name="lbTelefono"
+                FontFamily="QSM"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Telefono" />
+
+            <HorizontalStackLayout Margin="0,10,0,0" HorizontalOptions="Center">
+
+                <Custom:Button
+                    Margin="1.5"
+                    Clicked="DeleteEvent"
+                    ColorBG="{StaticResource Red}"
+                    HeightRequest="35"
+                    Picture="basura.png"
+                    WidthRequest="35" />
+
+                <Custom:Button
+                    x:Name="btn"
+                    Margin="1.5"
+                    Clicked="btn_Clicked"
+                    ColorBG="RoyalBlue"
+                    HeightRequest="35"
+                    Picture="mail.png"
+                    WidthRequest="35" />
+
+                <Custom:Button
+                    Margin="1.5"
+                    Clicked="CallEvent"
+                    ColorBG="{StaticResource Green}"
+                    HeightRequest="35"
+                    Picture="telefono.png"
+                    WidthRequest="35" />
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+
+
+    </Grid>
+
+
+</toolkit:Popup>

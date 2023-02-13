@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Grid
+    x:Class="LIN.CustomControls.InputImage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+
+    <!--  Contenido  -->
+    <Border
+        Grid.Row="0"
+        Padding="10"
+        BackgroundColor="LightGray"
+        StrokeShape="RoundRectangle 8">
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LoadImageEvent" />
+        </Border.GestureRecognizers>
+        <HorizontalStackLayout>
+            <Image
+                x:Name="picture"
+                Margin="1"
+                Aspect="AspectFit"
+                HeightRequest="20"  
+                VerticalOptions="Center"
+                Source="imagen.png"
+                WidthRequest="20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LoadImageEvent" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label
+                Margin="10,0,0,0"
+                FontFamily="QSM"
+                FontSize="12"
+                Text="Elegir imagen"
+                VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LoadImageEvent" />
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+
+    </Border>
+</Grid>

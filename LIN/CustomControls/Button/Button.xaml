@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="LIN.CustomControls.Button"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="this"
+    BackgroundColor="Transparent">
+
+
+    <Grid RowDefinitions="Auto">
+        <Border
+            x:Name="ll"
+            Grid.Row="0"
+            BackgroundColor="{Binding Source={x:Reference this}, Path=ColorBG}"
+            HeightRequest="{Binding Source={x:Reference this}, Path=HeightRequest}"
+            HorizontalOptions="FillAndExpand"
+            StrokeDashOffset="8"
+            StrokeShape="{OnPlatform WinUI='RoundRectangle 8',
+                                     Android='RoundRectangle 10'}"
+            StrokeThickness="0"
+            WidthRequest="{Binding Source={x:Reference this}, Path=WidthRequest}">
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="SubmitClick" />
+            </Border.GestureRecognizers>
+
+        </Border>
+
+        <Image
+            x:Name="uio"
+            Grid.Row="0"
+            HorizontalOptions="FillAndExpand">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="SubmitClick" />
+            </Image.GestureRecognizers>
+
+        </Image>
+
+    </Grid>
+
+
+
+</ContentView>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="LIN.CustomControls.Contacto"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid RowDefinitions="auto">
+
+        <!--  Fondo  -->
+        <Border
+            Grid.Row="0"
+            BackgroundColor="Transparent"
+            StrokeShape="RoundRectangle 6"
+            StrokeThickness="0.7">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+            </Border.GestureRecognizers>
+        </Border>
+
+        <!--  Contenido  -->
+        <HorizontalStackLayout Grid.Row="0" Margin="10,0,0,0">
+
+
+            <!--  Imagen  -->
+            <Grid
+                Margin="0,9,0,9"
+                HorizontalOptions="Center"
+                RowDefinitions="auto"
+                VerticalOptions="Center">
+                <Border
+                    x:Name="bgImg"
+                    Grid.Row="0"
+                    BackgroundColor="YellowGreen"
+                    HeightRequest="35"
+                    StrokeShape="RoundRectangle 25"
+                    WidthRequest="35">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                    </Border.GestureRecognizers>
+                    <Image
+                        x:Name="img"
+                        HeightRequest="35"
+                        IsVisible="false"
+                        Source="icono.png"
+                        WidthRequest="35" />
+                </Border>
+
+                <Label
+                    x:Name="lbPic"
+                    Grid.Row="0"
+                    Margin="-1,-1,0,0"
+                    FontFamily="QSB"
+                    FontSize="12"
+                    HorizontalOptions="Center"
+                    Text="C"
+                    VerticalOptions="Center" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </Grid>
+
+
+            <!--  Metadatos  -->
+            <VerticalStackLayout
+                Margin="10,-2,0,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    x:Name="lbName"
+                    FontFamily="QSB"
+                    Text="Colanta">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <HorizontalStackLayout Margin="0,-4,0,0">
+                    <Label
+                        x:Name="lbMail"
+                        FontFamily="QSM"
+                        FontSize="10"
+                        Text="colanta@gmail.com">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                        Margin="3,0,3,0"
+                        FontFamily="QSB"
+                        FontSize="10"
+                        Text="|">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                        x:Name="lbTelefono"
+                        FontFamily="QSM"
+                        FontSize="10"
+                        Text="326 870 5443">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </HorizontalStackLayout>
+
+    </Grid>
+
+</ContentView>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LIN.UI.Vistas.Proveedores.ProveedorAdd"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Custom="clr-namespace:LIN.CustomControls"
+    Title="ProductAdd">
+
+
+    <ScrollView>
+
+        <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+
+            <!--  Icono  -->
+            <Image
+                x:Name="Imagen"
+                HeightRequest="40"
+                Source="add.png"
+                WidthRequest="40" />
+
+
+            <!--  Label bienvenida  -->
+            <HorizontalStackLayout Margin="0,12,0,13" HorizontalOptions="Center">
+                <Label
+                    Margin="0,0,4,0"
+                    FontFamily="QSR"
+                    FontSize="16"
+                    Text="Agrega un nuevo "
+                    TextColor="Gray" />
+
+                <Label
+                    FontFamily="QSB"
+                    FontSize="16"
+                    Text="Contacto"
+                    TextColor="#006DBF" />
+            </HorizontalStackLayout>
+
+
+            <!--  Cargador de imagen  -->
+            <Custom:InputImage x:Name="inputImage" WidthRequest="300" />
+
+
+            <!--  txt Nombre  -->
+            <Custom:EntryControl
+                x:Name="txtName"
+                Margin="0,12,0,0"
+                Placeholder="Nombre"
+                WidthRequest="300" />
+
+            <!--  txt Mail  -->
+            <Custom:EntryControl
+                x:Name="txtMail"
+                Margin="0,8,0,0"
+                Placeholder="Correo electronico"
+                WidthRequest="300" />
+
+            <!--  txt Telefono  -->
+            <Custom:EntryControl
+                x:Name="txtPhone"
+                Margin="0,8,0,0"
+                Placeholder="Telefono"
+                WidthRequest="300" />
+
+            <!--  txt Direccion  -->
+            <Custom:EntryControl
+                x:Name="txtDireccion"
+                Margin="0,8,0,0"
+                Placeholder="Direccion"
+                WidthRequest="300" />
+
+
+
+            <!--  Label info  -->
+            <Label
+                x:Name="lbInfo"
+                Margin="0,15,0,0"
+                FontFamily="QSL"
+                FontSize="13"
+                HorizontalOptions="Center"
+                IsVisible="false"
+                Text=""
+                TextColor="Crimson"
+                VerticalOptions="End" />
+
+
+            <!--  Iniciar sesion  -->
+            <Button
+                x:Name="btnLogin"
+                Margin="0,15,0,0"
+                Clicked="btnLogin_Clicked"
+                FontFamily="QSB"
+                Text="Agregar"
+                WidthRequest="300" />
+
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

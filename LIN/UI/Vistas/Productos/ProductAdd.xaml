@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LIN.UI.Vistas.Productos.ProductAdd"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Custom="clr-namespace:LIN.CustomControls"
+    Title="ProductAdd">
+
+
+    <ScrollView>
+
+        <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+
+            <!--  Icono  -->
+            <Image
+                x:Name="Imagen"
+                HeightRequest="40"
+                Source="add.png"
+                WidthRequest="40" />
+
+
+            <!--  Label bienvenida  -->
+            <HorizontalStackLayout Margin="0,12,0,10" HorizontalOptions="Center">
+                <Label
+                    Margin="0,0,4,0"
+                    FontFamily="QSR"
+                    FontSize="16"
+                    Text="Agrega un nuevo "
+                    TextColor="Gray" />
+
+                <Label
+                    FontFamily="QSB"
+                    FontSize="16"
+                    Text="Producto"
+                    TextColor="#006DBF" />
+            </HorizontalStackLayout>
+
+
+            <!--  Cargador de imagen  -->
+            <Custom:InputImage x:Name="inputImage" WidthRequest="300" />
+
+
+            <!--  txt Nombre  -->
+            <Custom:EntryControl
+                x:Name="txtName"
+                Margin="0,12,0,0"
+                HorizontalOptions="Center"
+                Placeholder="Nombre"
+                WidthRequest="300" />
+
+
+
+            <HorizontalStackLayout Margin="0,10,0,0" HorizontalOptions="Center">
+                <!--  txt Categoria  -->
+                <Custom:EntryControl
+                    x:Name="txtCategoria"
+                    Margin="0,0,0,0"
+                    Placeholder="Categoria"
+                    WidthRequest="220" />
+
+                <!--  Entrada de Cantidad  -->
+                <Custom:Counter
+                    x:Name="cantidad"
+                    Margin="0,0,0,0"
+                    VerticalOptions="End"
+                    WidthRequest="80" />
+
+            </HorizontalStackLayout>
+
+
+            <!--  Proveedor  -->
+            <HorizontalStackLayout
+                x:Name="proveedorContent"
+                Margin="0,10,0,0"
+                HorizontalOptions="Center"
+                WidthRequest="300" />
+
+
+
+
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Custom:EntryControl
+                    x:Name="txtPrecioCompra"
+                    Margin="0,10,0,0"
+                    x:FieldModifier="public"
+                    Placeholder="Precio de compra"
+                    VerticalOptions="End"
+                    WidthRequest="150" />
+                <Custom:EntryControl
+                    x:Name="txtPrecioVenta"
+                    Margin="0,10,0,0"
+                    x:FieldModifier="public"
+                    Placeholder="Precio de venta"
+                    VerticalOptions="End"
+                    WidthRequest="150" />
+            </HorizontalStackLayout>
+
+
+            <!--  Label info  -->
+            <Label
+                x:Name="lbInfo"
+                Margin="0,15,0,0"
+                FontFamily="QSL"
+                FontSize="13"
+                HorizontalOptions="Center"
+                IsVisible="false"
+                Text=""
+                TextColor="Crimson"
+                VerticalOptions="End" />
+
+
+            <!--  Iniciar sesion  -->
+            <Button
+                x:Name="btnLogin"
+                Margin="0,15,0,0"
+                Clicked="btnLogin_Clicked"
+                FontFamily="QSB"
+                Text="Agregar"
+                WidthRequest="300" />
+
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

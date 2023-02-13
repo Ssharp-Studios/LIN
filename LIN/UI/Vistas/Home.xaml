@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LIN.UI.Vistas.Home"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Custom="clr-namespace:LIN.CustomControls"
+    Title="Home">
+
+    <VerticalStackLayout VerticalOptions="Center">
+
+
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Custom:Button
+                x:Name="bt1"
+                Margin="1.5"
+                Clicked="Button_Clicked"
+                HeightRequest="40"
+                Picture="icono.png"
+                WidthRequest="40" />
+            <Custom:Button
+                x:Name="bt2"
+                Margin="1.5"
+                Clicked="Button_Clicked_1"
+                HeightRequest="40"
+                Picture="people.png"
+                WidthRequest="40" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Custom:Button
+                x:Name="bt3"
+                Margin="1.5"
+                Clicked="bt3_Clicked"
+                HeightRequest="40"
+                Picture="entrada.png"
+                WidthRequest="40" />
+            <Custom:Button
+                x:Name="bt4"
+                Margin="1.5"
+                HeightRequest="40"
+                Picture="salida.png"
+                WidthRequest="40" />
+        </HorizontalStackLayout>
+
+
+
+    </VerticalStackLayout>
+
+</ContentPage>

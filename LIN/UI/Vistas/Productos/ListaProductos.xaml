@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LIN.UI.Vistas.Productos.ListaProductos"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Controls="clr-namespace:LIN.UI.Controles"
+    xmlns:Custom="clr-namespace:LIN.CustomControls"
+    Title="ListaProductos">
+
+    <ScrollView>
+
+
+        <VerticalStackLayout>
+
+            <!--  Header  -->
+            <HorizontalStackLayout Margin="10" HorizontalOptions="Start">
+
+                <Image
+                    HeightRequest="25"
+                    Source="icono.png"
+                    VerticalOptions="Center"
+                    WidthRequest="25" />
+
+                <Label
+                    Margin="7,0,0,3"
+                    FontFamily="QSB"
+                    FontSize="13"
+                    Text="Mis Productos"
+                    VerticalOptions="Center" />
+
+                <SearchBar
+                    x:Name="src"
+                    Margin="5,0,0,0"
+                    
+                    FontFamily="QSR"
+                    FontSize="10"
+                    Placeholder="Buscar un producto"
+                    SearchButtonPressed="SearchBar_SearchButtonPressed"
+                    TextChanged="src_TextChanged"
+                    WidthRequest="200" />
+
+                <Custom:Button
+                    Margin="5,0,0,0"
+                    Clicked="Button_Clicked"
+                    HeightRequest="32"
+                    Picture="add.png"
+                    WidthRequest="32" />
+
+            </HorizontalStackLayout>
+
+            <Label
+                x:Name="lbInfo"
+                Margin="9,0,0,0"
+                FontFamily="QSM"
+                FontSize="12"
+                HorizontalOptions="Center"
+                InputTransparent="True"
+                Text="HolaMundo"
+                VerticalOptions="Center" />
+
+
+
+            <!--  Contenido  -->
+            <VerticalStackLayout
+                x:Name="content"
+                Margin="1,0,1,0"
+                Padding="20" />
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="LIN.CustomControls.Card"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="this">
+
+    <!--  Fondo  -->
+    <Border
+        Padding="1"
+        Background="{Binding Source={x:Reference this}, Path=ColorBG}"
+        HeightRequest="90"
+        HorizontalOptions="FillAndExpand"
+        StrokeShape="{OnPlatform WinUI='RoundRectangle 8',
+                                 Android='RoundRectangle 10'}"
+        StrokeThickness="0"
+        WidthRequest="162">
+
+        <!--  Organizacion horizontal  -->
+        <HorizontalStackLayout
+            Padding="10"
+            HorizontalOptions="FillAndExpand"
+            WidthRequest="160">
+
+            <!--  Icono  -->
+            <Image
+                Margin="5,0,0,0"
+                HeightRequest="30"
+                HorizontalOptions="Start"
+                Source="{Binding Source={x:Reference this}, Path=Picture}"
+                WidthRequest="30" />
+
+
+            <!--  Agrupacion  -->
+            <VerticalStackLayout
+                Margin="15,0,0,0"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center">
+
+                <!--  Titulo  -->
+                <Label
+                    Margin="0,0,0,3"
+                    FontFamily="QSB"
+                    HorizontalOptions="Start"
+                    Text="{Binding Source={x:Reference this}, Path=Titulo}"
+                    TextColor="{Binding Source={x:Reference this}, Path=ColorText}"
+                    VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTitle" />
+                        <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="OnTitle2" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+
+                <!--  Contenido  -->
+                <Border
+                    x:Name="anim"
+                    Padding="1"
+                    Background="{Binding Source={x:Reference this}, Path=ColorSupport}"
+                    HorizontalOptions="Start"
+                    StrokeShape="RoundRectangle 6"
+                    StrokeThickness="0"
+                    VerticalOptions="Center">
+
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnSubTitle" />
+                        <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="OnSubTitle2" />
+                    </Border.GestureRecognizers>
+
+                    <HorizontalStackLayout Margin="5">
+
+                        <Label
+                            x:Name="lbPrecioVenta"
+                            Margin="2"
+                            FontFamily="QSB"
+                            FontSize="10"
+                            HorizontalOptions="Center"
+                            Text="{Binding Source={x:Reference this}, Path=ContentText}"
+                            TextColor="{Binding Source={x:Reference this}, Path=ColorText}"
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnSubTitle" />
+                                <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="OnSubTitle2" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                    </HorizontalStackLayout>
+                </Border>
+
+
+            </VerticalStackLayout>
+
+
+        </HorizontalStackLayout>
+
+    </Border>
+
+
+</ContentView>

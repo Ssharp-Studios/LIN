@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="LIN.UI.Popups.Welcome"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Custom="clr-namespace:LIN.CustomControls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Color="Transparent">
+
+    <!--  Contenido  -->
+    <Grid
+        HeightRequest="200"
+        RowDefinitions="auto"
+        WidthRequest="330">
+
+        <!--  Fondo  -->
+        <Border
+            Grid.Row="0"
+            BackgroundColor="#ECECEC"
+            HeightRequest="200"
+            StrokeShape="RoundRectangle 8"
+            StrokeThickness="0"
+            VerticalOptions="Center"
+            WidthRequest="330" />
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+
+            <!--  Imagen  -->
+            <Image
+                Margin="0,0,0,0"
+                HeightRequest="35"
+                HorizontalOptions="Center"
+                Source="hello.png"
+                VerticalOptions="Center"
+                WidthRequest="35" />
+
+            <!--  Bienvenida  -->
+            <HorizontalStackLayout
+                Margin="0,6,0,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    FontFamily="QSB"
+                    FontSize="12"
+                    HorizontalOptions="Center"
+                    Text="¡"
+                    VerticalOptions="Center" />
+
+                <Label
+                    FontFamily="QSM"
+                    FontSize="12"
+                    HorizontalOptions="Center"
+                    Text="Bienvenido a"
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="2,0,0,0"
+                    FontFamily="QSB"
+                    FontSize="12"
+                    HorizontalOptions="Center"
+                    Text="LIN"
+                    TextColor="{StaticResource Primary}"
+                    VerticalOptions="Center" />
+                <Label
+                    FontFamily="QSB"
+                    FontSize="12"
+                    HorizontalOptions="Center"
+                    Text="!"
+                    VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!--  Plan Actual  -->
+            <HorizontalStackLayout
+                Margin="0,3,0,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+
+                <Label
+                    FontFamily="QSM"
+                    FontSize="8"
+                    HorizontalOptions="Center"
+                    Text="Plan Actual "
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="2,0,0,0"
+                    FontFamily="QSB"
+                    FontSize="8"
+                    HorizontalOptions="Center"
+                    Text="Basico"
+                    TextColor="{StaticResource Primary}"
+                    VerticalOptions="Center" />
+
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout
+                Margin="0,15,0,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+
+                <!--  Presentacion: Multipltaforma  -->
+                <Custom:MiniCard
+                    Contenido="Administra tu inventario desde cualquier dispositivo."
+                    Source="dispositivos.png"
+                    Titulo="Multipltaforma" />
+
+                <!--  Presentacion: Dinero  -->
+                <Custom:MiniCard
+                    Contenido="Administra rapidamente lo que puedes gastar."
+                    Source="dolar.png"
+                    Titulo="Gastos" />
+
+            </HorizontalStackLayout>
+
+
+
+        </VerticalStackLayout>
+
+    </Grid>
+
+
+
+</toolkit:Popup>

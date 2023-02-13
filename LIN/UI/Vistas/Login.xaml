@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LIN.UI.Vistas.Login"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Custom="clr-namespace:LIN.CustomControls">
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+
+        <!--  Icono  -->
+        <Image Source="icono.png" WidthRequest="40" />
+
+        <!--  Label de bienvenida  -->
+        <HorizontalStackLayout
+            Margin="0,11,0,0"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label
+                Margin="0,0,3,0"
+                FontFamily="QSM"
+                FontSize="15"
+                Text="Bienvenido a"
+                TextColor="Gray" />
+            <Label
+                FontFamily="QSB"
+                FontSize="15"
+                Text="LIN"
+                TextColor="{StaticResource Primary}" />
+
+        </HorizontalStackLayout>
+
+        <!--  Texto de usuario  -->
+        <Custom:EntryControl
+            x:Name="txtUser"
+            Margin="0,10,0,0"
+            x:FieldModifier="public"
+            Placeholder="Usuario"
+            WidthRequest="300" />
+
+        <!--  Texto de contraseña  -->
+        <Custom:EntryControl
+            x:Name="txtPass"
+            Margin="0,6,0,0"
+            x:FieldModifier="public"
+            IsPassword="True"
+            Placeholder="Contraseña"
+            WidthRequest="300" />
+
+
+        <!--  Label de error  -->
+        <Label
+            x:Name="lbInfo"
+            Margin="0,10,0,0"
+            FontFamily="QSB"
+            FontSize="10"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Text="Error al Crear cuenta"
+            TextColor="{StaticResource Red}" />
+
+        <ActivityIndicator
+            x:Name="indicador"
+            Margin="0,10,0,0"
+            HeightRequest="25"
+            IsRunning="True"
+            IsVisible="false"
+            WidthRequest="25"
+            Color="{StaticResource Primary}" />
+
+        <!--  Boton iniciar sesion  -->
+        <Button
+            x:Name="btnIniciar"
+            Margin="0,10,0,0"
+            Clicked="Button_Clicked"
+            FontFamily="QSB"
+            FontSize="12"
+            Text="Iniciar Sesion"
+            WidthRequest="300" />
+
+
+
+
+        <!--  Crear cuenta label  -->
+        <HorizontalStackLayout
+            x:Name="lbsCrear"
+            Margin="{OnPlatform Android='0,20,0,0',
+                                WinUI='0,10,0,0'}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label
+                Margin="0,0,4,0"
+                FontFamily="QSM"
+                FontSize="10"
+                Text="¿No tienes cuenta?">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="NotAccountEvent" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                FontFamily="QSB"
+                FontSize="10"
+                Text="Crear cuenta"
+                TextColor="{StaticResource Primary}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="NotAccountEvent" />
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

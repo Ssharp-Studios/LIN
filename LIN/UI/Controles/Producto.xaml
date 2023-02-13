@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="LIN.UI.Controles.Producto"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Margin="3">
+
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LabelsGestures" />
+    </ContentView.GestureRecognizers>
+
+    <Border
+        Padding="13"
+        StrokeShape="RoundRectangle 6"
+        StrokeThickness="0.8">
+
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LabelsGestures" />
+        </Border.GestureRecognizers>
+
+        <!--  Contenido  -->
+        <HorizontalStackLayout>
+
+
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LabelsGestures" />
+            </HorizontalStackLayout.GestureRecognizers>
+
+            <!--  Imagen del producto  -->
+            <Image
+                x:Name="img"
+                Source="icono.png"
+                WidthRequest="23">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ImageGestures" />
+                </Image.GestureRecognizers>
+            </Image>
+
+
+            <!--  Datos  -->
+            <VerticalStackLayout Margin="10,0,0,0">
+
+                <!--  Nombre del producto  -->
+                <Label
+                    x:Name="lbName"
+                    FontFamily="QSB"
+                    FontSize="14"
+                    Text="Product">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LabelsGestures" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <!--  Categoria  -->
+                <Label
+                    x:Name="lbCategoria"
+                    FontFamily="QSR"
+                    FontSize="10"
+                    Text="Product Category">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LabelsGestures" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <HorizontalStackLayout Margin="0,1,0,0">
+
+                    <!--  Precio  -->
+                    <Label
+                        x:Name="lbPrecio"
+                        FontFamily="QSM"
+                        FontSize="10"
+                        Text="$ 10.000"
+                        TextColor="{StaticResource Green}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LabelsGestures" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label
+                        Margin="3,0,3,0"
+                        FontFamily="QSB"
+                        FontSize="10"
+                        Text="|" />
+
+                    <!--  Cantidad  -->
+                    <Label
+                        x:Name="lbCantidad"
+                        FontFamily="QSSB"
+                        FontSize="10"
+                        Text="350 u">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LabelsGestures" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </HorizontalStackLayout>
+    </Border>
+
+</ContentView>

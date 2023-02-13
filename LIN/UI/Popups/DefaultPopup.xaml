@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="LIN.UI.Popups.DefaultPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Color="Transparent">
+
+    <Border
+        Padding="0"
+        BackgroundColor="#ECECEC"
+        HeightRequest="100"
+        StrokeShape="RoundRectangle 10"
+        StrokeThickness="0"
+        WidthRequest="100">
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+        </Border.GestureRecognizers>
+
+        <VerticalStackLayout Margin="3">
+            <Image
+                Margin="0,23,0,0"
+                HeightRequest="25"
+                HorizontalOptions="Center"
+                Source="check.png"
+                VerticalOptions="Center"
+                WidthRequest="25">
+
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                </Image.GestureRecognizers>
+
+            </Image>
+            <Label
+                x:Name="lbText"
+                Margin="0,2,0,0"
+                FontFamily="QSB"
+                FontSize="12"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+
+            </Label>
+
+        </VerticalStackLayout>
+
+    </Border>
+
+
+</toolkit:Popup>
